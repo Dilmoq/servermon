@@ -1,0 +1,8 @@
+[Unit]
+Description=servermon threshold check (signals failure on breach)
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/servermon check
+# Non-zero exit triggers OnFailure= unit if configured:
+# OnFailure=notify@%n

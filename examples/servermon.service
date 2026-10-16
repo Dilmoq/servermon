@@ -1,0 +1,12 @@
+[Unit]
+Description=servermon history collector
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/servermon watch
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
